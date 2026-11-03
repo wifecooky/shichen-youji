@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f4e9">
+  <meta name="description" content="跟十二生肖环游一天：玩时辰盘、记顺口溜、挑战排序与时间问答，轻松记住十二时辰。">
+  <title>十二时辰漫游记 · 把古人的一天记下来</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%232f5143'/%3E%3Ctext x='32' y='45' text-anchor='middle' font-size='40' fill='%23f7f4e9'%3E时%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳到内容</a>
+  <header class="topbar">
+    <a class="brand" href="#explore" aria-label="十二时辰漫游记首页"><span class="brand-seal">时</span><span>十二时辰<span class="brand-light">漫游记</span></span></a>
+    <span class="top-note">一天十二站 · 每站两小时</span>
+    <span class="edition">一日 / 一游</span>
+  </header>
+  <main id="main">
+    <section class="intro" aria-labelledby="title">
+      <div><p class="eyebrow"><span></span>给时间，找一个好记的朋友</p><h1 id="title">古人的一天，<br>原来这么<span class="ink-circle">好记</span>。</h1></div>
+      <div class="intro-aside"><span class="tiny-sun" aria-hidden="true">☀</span><p>子鼠、丑牛、寅虎、卯兔……<br>跟着十二生肖，走完一天。<br><strong>不用硬背，玩着就记住。</strong></p></div>
+    </section>
+    <nav class="tabs" aria-label="学习方式">
+      <a href="#explore" data-page="explore" aria-current="page"><span>01</span> 逛时辰</a>
+      <a href="#memory" data-page="memory"><span>02</span> 记口诀</a>
+      <a href="#challenge" data-page="challenge"><span>03</span> 小试身手</a>
+      <span class="tab-note" id="visited-note">已认识 1 / 12 个时辰</span>
+    </nav>
+
+    <section id="explore" class="page explore-page" aria-label="互动时辰盘">
+      <div class="explore-grid">
+        <div class="clock-panel">
+          <div class="panel-top"><span class="small-label">十二时辰 · 一日环游</span><button class="text-button" id="now-btn">看看现在 ↗</button></div>
+          <div class="clock" id="clock">
+            <div class="clock-rim" aria-hidden="true"></div><div class="clock-inner" aria-hidden="true"></div>
+            <span class="axis axis-top">午夜</span><span class="axis axis-bottom">正午</span>
+            <div class="clock-hand" id="clock-hand" aria-hidden="true"></div>
+            <div class="clock-hub"><span id="hub-animal" aria-hidden="true">🐇</span><span class="hub-word" id="hub-word">卯时</span><span id="hub-period">清晨的时光</span></div>
+            <div id="clock-stops" role="group" aria-label="选择时辰"></div>
+          </div>
+          <div class="clock-controls"><button class="round-button" id="prev" aria-label="上一个时辰">←</button><p>点一个生肖，<span>去那时看看</span></p><button class="round-button" id="next" aria-label="下一个时辰">→</button></div>
+        </div>
+        <article class="story-panel" aria-live="polite" aria-atomic="true">
+          <div class="story-top"><span class="small-label" id="story-stop">第 04 站 / 共 12 站</span><span class="story-tag" id="story-tag">日出的朋友</span></div>
+          <div class="story-heading"><h2 id="story-title">卯<span>mǎo</span></h2><span class="animal-stamp" id="story-animal" aria-hidden="true">🐇</span></div>
+          <p class="time-range" id="story-time">05:00 <span>至</span> 07:00</p>
+          <p class="story-lead" id="story-lead">小兔起床，太阳露头。</p>
+          <p class="story-copy" id="story-copy">想象一只小兔推开窗，把第一缕阳光装进胡萝卜篮子。兔子一醒，卯时就到。</p>
+          <div class="memory-note"><span>这样记</span><p id="story-hook">卯兔迎日出，清晨五到七。</p></div>
+          <div class="anchor-note" id="anchor-note"><span aria-hidden="true">✳</span><p>你刚问过的「点卯」，就是早晨点名。<br>把卯时和上班报到连起来记。</p></div>
+          <button class="primary story-cta" id="next-story">下一站 · 辰龙 <span>↗</span></button>
+        </article>
+      </div>
+      <div class="quick-rule"><span class="rule-seal">记</span><div><h3>先钉住两个点，整圈就好记。</h3><p><strong>子时跨午夜，午时跨正午。</strong> 从子时开始，顺着地支转一圈，每次往后加 2 小时。</p></div><a href="#memory">去记口诀 <span>→</span></a></div>
+    </section>
+
+    <section id="memory" class="page" hidden aria-labelledby="memory-title">
+      <div class="section-intro"><div><p class="eyebrow">把十二个字，分成三小段</p><h2 id="memory-title">四个一组，顺口就记住。</h2></div><button class="secondary" id="recite">播放记忆节奏 <span>▷</span></button></div>
+      <div class="chant-board" id="chant-board" aria-label="十二地支口诀"></div>
+      <p class="muted chant-tip" id="chant-status" aria-live="polite">念一遍地支，再配上你熟悉的生肖。点击任意一个字，回到它的时辰。</p>
+      <div class="memory-bottom"><div class="formula"><span class="small-label">一招换算</span><h3>先记中间，<br>再向两边各走一小时。</h3><p>子正是 0 点，丑正是 2 点，寅正是 4 点……<br>比如<strong>卯正是 6 点</strong>，所以卯时是 <strong>5 点到 7 点</strong>。</p><div class="formula-example"><span>05:00</span><span class="example-line"></span><b>06:00<br><small>卯正</small></b><span class="example-line"></span><span>07:00</span></div></div><div class="reference"><span class="small-label">随手查 · 十二时辰表</span><div id="reference-table"></div></div></div>
+      <div class="bottom-action"><p>顺序有印象了？去试一试。</p><a class="primary" href="#challenge">开始闯关 <span>↗</span></a></div>
+    </section>
+
+    <section id="challenge" class="page" hidden aria-labelledby="challenge-title">
+      <div class="section-intro"><div><p class="eyebrow">记得住，也要用得上</p><h2 id="challenge-title">来，跟时间过两招。</h2></div><span class="best-score" id="best-score">第一次挑战，从这里开始</span></div>
+      <div class="game-switch" role="group" aria-label="选择游戏"><button id="mode-quiz" aria-pressed="true">时辰猜猜看 <span>8 道题</span></button><button id="mode-order" aria-pressed="false">生肖排排队 <span>12 个字</span></button></div>
+      <div id="quiz-game" class="game-board">
+        <div class="game-meta"><span id="question-counter">第 1 题 / 共 8 题</span><span id="quiz-score">已答对 0 题</span></div><div class="progress-track"><div id="quiz-progress"></div></div>
+        <div id="quiz-active"><p class="question-kind" id="question-kind">时间 → 时辰</p><h3 id="question-title"></h3><p class="question-help" id="question-help"></p><div class="answers" id="answers"></div><div class="answer-feedback" id="answer-feedback" aria-live="polite"></div><button class="primary" id="next-question" hidden>下一题 <span>→</span></button></div>
+        <div id="quiz-result" hidden aria-live="polite"></div>
+      </div>
+      <div id="order-game" class="game-board" hidden><div class="game-meta"><span>从子时出发，顺时针排好十二站</span><span id="order-count">0 / 12</span></div><h3 class="order-title">谁是下一位时间朋友？</h3><p class="muted">按顺序点选下方的字。排错了也没关系，看看提示再来。</p><div class="order-slots" id="order-slots" aria-label="已排列的时辰"></div><div class="order-pool" id="order-pool" role="group" aria-label="待选时辰"></div><p class="order-feedback" id="order-feedback" aria-live="polite">第一位是子鼠，先找到「子」。</p><button class="secondary" id="reset-order">重新洗牌 ↻</button></div>
+      <div class="bottom-action"><p>忘了也正常，回去再逛一圈。</p><a class="text-button" href="#explore">返回时辰盘 →</a></div>
+    </section>
+  </main>
+  <footer><span class="footer-mark">十二时辰漫游记</span><p>生肖故事是帮助记忆的想象，不作为史料。采用常见时辰换算，子时从前一天 23:00 开始。</p><span>慢慢记，不着急。</span></footer>
+</body>
+</html>
